@@ -22,7 +22,7 @@ useEffect(()=>{
         setLoad(prevState=>!prevState)
         setProducts(data);
  setFiteredProducts(data) 
-    //  setLoad(prevState=>!prevState)
+    //  setLoad(true)
      }
     datas()
 },[])
