@@ -69,38 +69,7 @@ useEffect(()=>{
         }
       
         setSelectedCategories(updated);
-    // const checking=()=>{
-    //     let checked=true;
-          
-    //     const arrays=Array.from(document.querySelectorAll("input[type='checkbox']:checked")).map(each=>each.value)
-            // const {checked}=e.target;
-    //         if(e.target.checked &&(e.target.value==='mens')) {
-
-    //             const updated=[...filtered].filter(each=>each.category==="men's clothing")
-    //             setCategories([...updated])
-    //         }
-    //         if(e.target.checked &&(e.target.value==='womens')) {
-
-    //             const updated=[...filtered].filter(each=>each.category==="women's clothing")
-    //             setCategories([...updated])
-    //             // setFiteredProducts(updated)
-    //         }
-    //         if(e.target.checked &&(e.target.value==='jewelery')) {
-
-    //             const updated=[...filtered].filter(each=>each.category==="jewelery")
-    //             setCategories([...updated])
-    //             // setFiteredProducts(updated)
-    //         }
-    //         if(e.target.checked &&(e.target.value==='electronics')) {
-
-    //             const updated=[...filtered].filter(each=>each.category==="electronics")
-    //             setCategories([...updated])
-    //             // setFiteredProducts(updated)
-    //         }
-    //         else{
-
-    //             setFiteredProducts(products)
-    //         }
+   
     if (updated.length === 0) {
         setFiteredProducts(products);
         return;
@@ -237,7 +206,7 @@ height={40}
 </div>
 :
 filtered.map(each=>
-    <ProductsCarts key={each.id} product={each} loader={loader}/>
+    <ProductsCarts key={each.id} product={each}/>
 )
    
 }
