@@ -1,58 +1,73 @@
-import {Component} from "react"
-import { Link } from "react-router-dom"
+// import {Component} from "react"
+import { Link,useNavigate } from "react-router-dom"
+import {useEffect, useState} from 'react'
 // import Cookies from 'json-cookie'
+import './index.css'
 
-class Login extends Component{
-state={name:'',password:'',errMsg:''}
+const Login=()=>{
+    const [name, setName] = useState("")
+    const [pass, setPassword] = useState("")
+    const [errMsg,setError]=useState("")
+    // const [error,setError]=useState('')
+    const navigate = useNavigate()
 
-componentDidMount(){
-this.submitting()
-}
+    const submitting=(event)=>{
+        event.preventDefault()
+        // const {username,password}={username,password}
+        // const userDetails=(username,password)
+        const data=JSON.parse(localStorage.getItem('users'))
+    if(!data){
+     return setError("Sorry your not Registered")
+    }
+    if(data.name===name && data.password===pass){
+        return navigate('/home',{replace:true})   
+       
+    }
+     return setError('Invalid Login credintials')
 
-name=(event)=>{
-    this.setState({name:event.target.value})
-}
-password=(event)=>{
-    this.setState({password:event.target.value})
-}
-
-submitting=async(event)=>{
-    event.preventDefault()
-    const {username,password}=this.state
-    // const userDetails=(username,password)
-    const data=JSON.parse(localStorage.getItem('users'))
-if(!data){
- this.setState({errMsg:"Sorry UserDetails Invalid or Not Registered"})
-}
-if(data.username===username && data.password===password){
-    const {history}=this.props
-    history.replace('/home')
-}
+        
+    }
+    useEffect(()=>{
+        const data=JSON.parse(localStorage.getItem('users'))
+        if(data){
+            return navigate('/home',{replace:true})   
+           
+        }
+    })
     
-}
-
-    
-
-
-render(){
+  
     return(
+      
         <div className="login-bg">
-            <form onSubmit={this.submitting}>
-                <img src="https://res.cloudinary.com/dvuslk2d9/image/upload/v1761021905/logo_bnckhj.png" className="img-logo"/>
+            <form onSubmit={submitting}>
+                <img src="https://res.cloudinary.com/dvuslk2d9/image/upload/v1761021905/logo_bnckhj.png" className="img-logo" alt="logo"/>
                 <div>
-                    <input type="text" placeholder="Enter Your Name" onChange={this.name}/>
-                    <input type="password" placeholder="Enter Your Password" onChange={this.password}/>
+                    <label htmlFor="inputs1">Name:</label>
+                    <input type="text" className="inputs" id="inputs1" value={name} placeholder="Enter Your Name" onChange={(e)=>setName(e.target.value)}/>
+                    <label htmlFor="inputs2">Password:</label>
+                    <input type="password" className="inputs" id="inputs2" value={pass}  placeholder="Enter Your Password" onChange={(e)=>setPassword(e.target.value)}/>
                 </div>
-                <button type="submit">
+                <button type="submit" className="login-button">
                 Login
                 </button>
 
-                <span>
-                    <Link as='a' to='/SignIn'>SignIn</Link></span><p>{errMsg}</p>
+                <span className="sign-up">
+                    <Link as='a' to='/signup'>signup</Link></span>
+                    <p>{errMsg}</p>
             </form>
 
         </div>
     )
 }
-}
 export default Login
+
+
+
+
+
+
+
+    
+
+
+

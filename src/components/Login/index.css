@@ -1,0 +1,20 @@
+.login-button{
+    height:40px;
+    width:80px;
+    background-color: aquamarine;
+    border:0;
+    border-radius: 10px;
+    color: white;
+}
+.sign-up{
+    color:black;
+    background-color: gray;
+    height:40px;
+    width:80px;
+    text-align: center;
+    /* align-self: center; */
+    padding-top: 10px;
+    border:0;
+    border-radius: 10px;
+    
+}

@@ -1,0 +1,67 @@
+.list-container{
+    height:350px;
+    max-height: 400px;
+    width: 210px;
+    list-style-type: none;
+    background-color:rgba(54, 166, 246, 0.129);
+    padding:20px;
+    
+   /* z-index:1; */
+   display: flex;
+   flex-direction: column;
+    /* background-color:; */
+    /* color: burlywood; */
+    /* border:1.5px solid black; */
+    border-radius: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+.list-container:hover{
+    transform:  scale(1.1);
+    z-index:0;
+    transition:transform 0.4s ease-in-out;
+   box-shadow:0px 0px 15px 1px rgb(99, 98, 98);
+
+}
+.sub-list{
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items:flex-start;
+}
+.image-products{
+    height:130px;
+    align-self:center;
+    /* object-fit: cover; */
+}
+.title-head{
+    font-size:13px;
+    display:flex;
+    /* flex-wrap: wrap; */
+}
+span{
+    font-weight: 700;
+    color: rgba(46, 51, 49, 0.748);
+}
+/* summary{
+    align-self: flex-start;
+    display: block;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    z-index:1;
+
+} */
+ .details-content{
+    /* width: 10px; */
+    max-height: 80px;
+    overflow-y: auto;
+    padding: 5px;
+    /* display: block; */
+
+    /* position: absolute; */
+}
+.price{
+    font-weight:bold;
+    color:rgb(5, 166, 5);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
