@@ -1,4 +1,4 @@
-import {FidgetSpinner} from 'react-loader-spinner'
+
 import './index.css'
 
 const ProductCarts=(props)=>{
