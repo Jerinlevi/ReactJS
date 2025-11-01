@@ -12,20 +12,32 @@ const Products=()=>{
     const [loader,setLoad]=useState(false)
     const [selectedCategories, setSelectedCategories] = useState([]);
     // const [categories,setCategories]=useState([])
-    // const [ischecked,setCheck]=useState(false)
+    // const [ischecked,setCheck]=useState(true)
 
-useEffect(()=>{
-     const datas=async()=>{
-        const response=await fetch('https://fakestoreapi.com/products')
-        const data=await response.json()
-        console.log(data)
-        setLoad(prevState=>!prevState)
-        setProducts(data);
- setFiteredProducts(data) 
-    //  setLoad(true)
-     }
-    datas()
-},[])
+// useEffect(()=>{
+//      const datas=async()=>{
+//         const response=await fetch('https://fakestoreapi.com/products')
+//         const data=await response.json()
+//         console.log(data)
+        
+//         setProducts(data);
+//  setFiteredProducts(data) 
+//     // 
+//      }
+//     datas()
+// },[])
+    useEffect(() => {
+  fetch("https://fakestoreapi.com/products")
+    .then(res => res.json())
+    .then(data => {
+      console.log("Fetched:", data);
+      setProducts(data);
+        setLoad(false)
+      // setLoading(false);
+         setFiteredProducts(data) 
+    })
+    .catch(err => console.error("Error:", err));
+}, []);
 
 
 useEffect(()=>{
