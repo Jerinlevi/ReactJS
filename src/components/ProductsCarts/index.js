@@ -6,11 +6,7 @@ const ProductCarts=(props)=>{
 const {title,price,description,image}=product
     return(
         <>
-        {loader?  <FidgetSpinner color="aqua"
-            secondaryColor="white"
-            height={40}
-            
-            /> :
+        
         <li className="list-container">
             {/* <div className='setting-cate'>
                 <p>{category}</p>
@@ -35,7 +31,7 @@ const {title,price,description,image}=product
 
         </li>
         
-    }
+    
     </>
     
     )
