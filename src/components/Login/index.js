@@ -53,7 +53,7 @@ const Login=()=>{
 
                 <span className="sign-up">
                     <Link as='a' to='/signup'>signup</Link></span>
-                    <p>{errMsg}</p>
+                    <p className="error">{errMsg}</p>
             </form>
 
         </div>
