@@ -17,7 +17,7 @@ const Login=()=>{
         // const userDetails=(username,password)
         const data=JSON.parse(localStorage.getItem('users'))
     if(!data){
-     return setError("Sorry your not Registered")
+     return setError("Sorry your not Registered SIGN UP first")
     }
     if(data.name===name && data.password===pass){
         return navigate('/home',{replace:true})   
